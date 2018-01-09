@@ -4,4 +4,7 @@
   <%= @article.description %>
 </div>
 
-<%= link_to 'back', articles_path %>
+<%= link_to 'Edit', edit_article_path(@article) %>
+
+<br>
+<%= link_to 'Back', articles_path %>
