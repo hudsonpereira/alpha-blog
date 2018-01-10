@@ -6,5 +6,7 @@
   <p class="lead mt-2"><%= @user.email %></p>
 </div>
 
-<%= render 'articles/article', articles: @user.articles %>
+<%= render 'articles/article', articles: @articles %>
+
+<%= will_paginate @articles %>
 
