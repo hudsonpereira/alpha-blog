@@ -1,25 +1,23 @@
 <% if @article.errors.any? %>
-  <ul>
   <% @article.errors.full_messages.each do |message| %>
-    <li style="color: red">
+    <div class="alert alert-danger">
       <%= message %>
-    </li>
+    </div>
   <% end %>
-  </ul>
 <% end %>
 
 <%= form_for @article do |f| %>
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
+  <div class="form-group">
+    <%= f.label :title, class: 'form-label' %>
+    <%= f.text_field :title, class: 'form-control', placeholder: 'Enter a title' %>
+  </div>
 
-  <p>
+  <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description %>
-  </p>
+    <%= f.text_area :description, class: 'form-control', placeholder: 'Enter a description' %>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
 <% end %>
