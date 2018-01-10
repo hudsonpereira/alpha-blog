@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get 'update-account', to: 'users#update_account', as: 'update_account'
   post 'update-account', to: 'users#update'
 
-  get 'users/:id', to: 'users#show'
+  get 'users/:id', to: 'users#show', as: 'user'
+  get 'users', to: 'users#index', as: 'users'
 end

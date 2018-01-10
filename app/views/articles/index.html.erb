@@ -4,5 +4,8 @@
   <%= link_to "Create new article", new_article_path, class: "btn btn-info text-white" %>
 </div>
 
+<%= will_paginate :previous_label => "Previous", :next_label => "Next" %>
 
 <%= render 'article', articles: @articles %>
+
+<%= will_paginate :previous_label => "Previous", :next_label => "Next" %>

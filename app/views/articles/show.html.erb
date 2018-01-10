@@ -1,10 +1,16 @@
-<h2>Article <%= @article.title %></h2>
+<h2 class="display-3 mb-5"><%= @article.title %></h2>
 
 <div>
   <%= @article.description %>
 </div>
 
-<%= link_to 'Edit', edit_article_path(@article) %>
+<div class="card mt-5">
+  <div class="card-header">
+    <%= @article.user.username %>
+  </div>
+  <div class="card-body">
+    <%= gravatar_for @article.user %>
 
-<br>
-<%= link_to 'Back', articles_path %>
+    <%= link_to 'View profile', user_url(@article.user.id) %>
+  </div>
+</div>
