@@ -11,11 +11,13 @@
       <%= link_to 'Users', users_url, class: 'nav-item nav-link' %>
     </div>
     <div class="navbar-nav ml-auto">
-
-      <%= link_to 'Sign Up', signup_url, class: 'nav-item nav-link' %>
-      <%= link_to 'Log In', login_url, class: 'nav-item nav-link' %>
-      <%= link_to 'Log Out', logout_url, method: 'delete', class: 'nav-item nav-link' %>
-      <%# <%= link_to 'Account', update_account_url, class: 'nav-item nav-link' %> %>
+      <% if logged_in? %>
+        <%= link_to 'Log Out', logout_url, method: 'delete', class: 'nav-item nav-link' %>
+      <% else %>
+        <%= link_to 'Sign Up', signup_url, class: 'nav-item nav-link' %>
+        <%= link_to 'Log In', login_url, class: 'nav-item nav-link' %>
+      <% end %>
+      <%# <%= link_to 'Account', update_account_url, class: 'nav-item nav-link' %>
     </div>
   </div>
   </div>
