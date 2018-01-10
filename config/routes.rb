@@ -7,4 +7,9 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#signup', as: 'signup'
   post 'signup', to: 'users#create'
+
+  get 'update-account', to: 'users#update_account', as: 'update_account'
+  post 'update-account', to: 'users#update'
+
+  get 'users/:id', to: 'users#show'
 end

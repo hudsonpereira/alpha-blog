@@ -21,6 +21,12 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def update_account
+    @user = User.first
+
+    render 'edit'
+  end
+
   # POST /users
   # POST /users.json
   def create
