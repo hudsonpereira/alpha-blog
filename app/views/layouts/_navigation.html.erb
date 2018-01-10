@@ -12,11 +12,24 @@
     </div>
     <div class="navbar-nav ml-auto">
       <% if logged_in? %>
-        <%= link_to 'Log Out', logout_url, method: 'delete', class: 'nav-item nav-link' %>
+        <%# <li class="nav-item dropdown"> %>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.username %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'View profile', user_path(current_user), class: 'dropdown-item' %>
+            <%= link_to 'Update profile', update_account_url, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Log Out', logout_url, method: 'delete', class: 'dropdown-item' %>
+          </div>
+        </div>
+      <%# </li> %>
       <% else %>
         <%= link_to 'Sign Up', signup_url, class: 'nav-item nav-link' %>
         <%= link_to 'Log In', login_url, class: 'nav-item nav-link' %>
       <% end %>
+
       <%# <%= link_to 'Account', update_account_url, class: 'nav-item nav-link' %>
     </div>
   </div>
